@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 16px;
+    --reg-width: 1080px;
+    --blueish: rgb(173, 216, 230);
+    --bluefade: rgba(173, 216, 230, 0.7);
+    --darkerblue: hsl(195, 53%, 59%);
+    --darkestblue: hsl(195, 53%, 36%);
+
+    --animation-speed: 0.2s;
+}
+
+nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100px;
+    background-color: var(--blueish);
+    border: 3px solid black;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+/* USING PERCENT FOR FLEX-BASIS IS OBVIOUSLY A BAD IDEA, THE SIZE SCALES ON THE SIZE OF THE BROWSER TOO, THUS USE REM OR PX */
+
+nav a {
+    flex-basis: 12rem; 
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 15%;
+    text-align: center;
+    text-justify: center;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-family: Helvetica;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
+    background-color: var(--blueish);
+    border:0.1rem solid rgb(255, 255, 255);
+    border-radius: 1rem;
+    margin: 0.5rem 0.5rem;
+
+    transition: background-color var(--animation-speed) linear,
+    color var(--animation-speed) linear;
+}
+
+nav a.new {
+    flex-basis: 18rem; 
+    font-size: 2rem;
+}
+
+nav a:hover {
+    background-color: white;
+    color: var(--blueish);
+}
+
+nav div.nav-empty {
+    flex-basis: 400px;
+    flex-grow: 6;
+    flex-shrink: 6;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.hero-image {
+    background-image: url('../images/dentist.jpg');
+    width: 90%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-image .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--bluefade);
+    padding: 2rem 2rem;
+    z-index: 10;
+    color:rgb(52, 52, 52);
+}
+
+.hero-image .hero-text h1 {
+    font-weight: bolder;
+    font-size: 3rem;
+    font-family: 'Helvetica';
+}
+
+.hero-image .hero-text p {
+    font-weight: bold;
+    font-size: 1rem;    
+    font-family: 'arial';
+}
+
+.hero-image .hero-text button {
+    width: 15rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border-color: var(--darkerblue);
+    padding: 0.5rem;
+
+    cursor: pointer;
+
+    font-weight: normal;
+    font-size: 1rem;
+    color: var(--darkerblue);
+    background-color: white;
+
+    transition: background-color var(--animation-speed) linear,
+    color var(--animation-speed) linear;
+}
+
+.hero-image .hero-text button:hover {
+    background-color: var(--darkerblue);
+    color: white;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+
+    background-color: var(--darkestblue);
+    color: white;
+}
+
+.footer-body {
+    display: grid;
+    width: 90%;
+    height: auto;
+    margin-top: 1rem;
+    
+
+    justify-items: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 0.5rem;
+
+    grid-template: 40% 40% / repeat(4, 1fr) ;
+
+}
+
+.footer-body div.address,
+.footer-body div.email,
+.footer-body div.hours {
+    justify-self: left;
+    align-self: flex-start;
+
+    font-size: 1.2rem;
+    font-family: Georgia;
+}
+
+.footer-body div.address {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.footer-body div.email {
+    grid-area: 2 / 1 / span 1 / span 1;
+}
+
+.footer-body div.hours {
+    grid-area: 1 / 2 / span 2 / span 1;
+}
+
+.footer-body div.address-map {
+    grid-area: 1 / 3 / span 2 / span 2;
+    
+    display: block;
+    margin: auto;
+
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-bar {
+    margin: 1rem 0rem;
+    width: 90%;
+}
+
+.footer-bar hr {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, var(--darkestblue), white, var(--darkestblue));
+}
+
+.footer-bar p.credits {
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+    font-size: 1rem;
+    font-family: Georgia;
+}
