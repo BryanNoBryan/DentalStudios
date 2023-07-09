@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>FirstWeb</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src = 'js/main.js' defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href = "home.html" class = "home">home</a>
+            <a href = "about.html" class = "about">about</a>
+            <div class = "nav-empty"></div>
+            <a href = "new.html" class = "new">new patients</a>
+            <a href = "contact.html" class = "contact">contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class = "hero-image">
+            <div class = "hero-text">
+                <h1>Dental Studios</h1>
+                <p>Quality Dental Care<br><br><br></p>
+                <button id = 'appointment'>Make An Appointment</button>
+            </div>
+        </div>
+    </main>
+    <div class = 'dropdown-container' id = 'animation-container'>
+        <div class = 'dropdown' id = 'animation'>
+            <form id = 'information-form'>
+                <p>The Time Now Is: </p>
+                <time></time>
+                <label for = 'first-name'>
+                    First Name:
+                </label><br>
+                <input type = 'text' name = "first-name" id = 'first-name' required>
+                <span class="validity"></span>
+                <br>
+                <label for = 'last-name'>
+                    Last Name:
+                </label><br>
+                <input type = 'text' name = "last-name" id = 'last-name' required>
+                <span class="validity"></span>
+                <br>
+                <label for = 'tel-number'>
+                    Phone Number:
+                </label><br>
+                <input type = 'tel' name = "tel-number" id = "tel-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  placeholder="123-456-7890" required>
+                <span class="validity"></span>
+                <br>
+                <input type = 'submit' value = "Submit">
+            </form>
+        </div>
+    </div>
+
+    <footer class = 'footer'>
+        <div class = 'footer-body'>
+            <div class = 'address'>
+                <p>Dental Studios<br>Address:</p>
+            </div>
+            <div class = 'email'>
+                <p>Email: </p>
+                <a href = "">theEmail@gmail.com</a>
+            </div>
+            <div class = 'hours'>
+                <p>Hours:<br>Monday<br>Tuesday<br>Wednesday</p>
+            </div>
+            <div class = 'address-map'>
+                <a href = ""><img src = 'images/dentalLocation.jpg' alt = "google address: "></a>
+            </div>
+        </div>
+        <div class = 'footer-bar'>
+            <hr>
+            <p class = 'credits'>@ 2023 Web Designer :D</p>
+        </div>
+    </footer>
+</body>
+</html>
