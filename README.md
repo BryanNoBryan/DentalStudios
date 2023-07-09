@@ -1,4 +1,4 @@
-# The Site is current live at
+# The Site Is Currently Live At
 https://bryannobryan.github.io/DentalWeb/
 # DentalWeb
 This is a little learning project to learn html, css, and javscript.
