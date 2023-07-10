@@ -1,5 +1,5 @@
 # The Site Is Currently Live At
-https://bryannobryan.github.io/DentalWeb/
+https://bryannobryan.github.io/DentalStudios/
 # DentalWeb
 This is a little learning project to learn html, css, and javscript.
 The big 'Make An Appointment' button leads to a drop down animation done in JS(but could be done in css anyway).
