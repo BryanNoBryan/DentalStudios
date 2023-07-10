@@ -1,7 +1,23 @@
-console.log('3');
+console.log('hello there');
 document.getElementById("appointment").addEventListener("click", dropDown);
+document.getElementById("appointment").addEventListener("click", () => {
+  timeUpdate();
+  setInterval(timeUpdate, 1000);
+});
 document.getElementById('information-form').addEventListener('submit', setCookie);
 window.addEventListener('load', checkCookie);
+
+let time = document.getElementById('time');
+
+function timeUpdate() {
+  let d = new Date();
+  let s = d.getSeconds();
+  let m = d.getMinutes();
+  let h = d.getHours();
+  let IsPM = (h >= 12);
+  time.innerHTML = (h%12 == 0)?'12':(h%12) +':'+m+':'+s+' '+(IsPM?'PM':'AM');
+  
+}
 
 function dropDown() {
     let id = null;
@@ -12,7 +28,7 @@ function dropDown() {
     window.scrollTo();
     elem.scrollIntoView({behavior: "smooth", block: "start"});
     function frame() {
-      if (pos == 250) {
+      if (pos == 350) {
         clearInterval(id);
       } else {
         pos+= 5;
