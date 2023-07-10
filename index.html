@@ -31,27 +31,37 @@
     <div class = 'dropdown-container' id = 'animation-container'>
         <div class = 'dropdown' id = 'animation'>
             <form id = 'information-form'>
-                <p>The Time Now Is: </p>
-                <time></time>
-                <label for = 'first-name'>
-                    First Name:
-                </label><br>
-                <input type = 'text' name = "first-name" id = 'first-name' required>
-                <span class="validity"></span>
-                <br>
-                <label for = 'last-name'>
-                    Last Name:
-                </label><br>
-                <input type = 'text' name = "last-name" id = 'last-name' required>
-                <span class="validity"></span>
-                <br>
-                <label for = 'tel-number'>
-                    Phone Number:
-                </label><br>
-                <input type = 'tel' name = "tel-number" id = "tel-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  placeholder="123-456-7890" required>
-                <span class="validity"></span>
-                <br>
-                <input type = 'submit' value = "Submit">
+                <div id="time-container">
+                    <time id = 'time'></time>
+                </div>
+
+                <div>
+                    <label for = 'first-name'>
+                        First Name:
+                    </label><br>
+                    <input type = 'text' name = "first-name" id = 'first-name' required>
+                    <span class="validity"></span>
+                </div>
+
+                <div>
+                    <label for = 'last-name'>
+                        Last Name:
+                    </label><br>
+                    <input type = 'text' name = "last-name" id = 'last-name' required>
+                    <span class="validity"></span>
+                </div>
+
+                <div>
+                    <label for = 'tel-number'>
+                        Phone Number:
+                    </label><br>
+                    <input type = 'tel' name = "tel-number" id = "tel-number" pattern="([0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{10})"  placeholder="123-456-7890" required>
+                    <span class="validity"></span>
+                </div>
+
+                <div id = 'submit-container'>
+                    <input type = 'submit' value = "Submit" id = 'submit'>
+                </div>
             </form>
         </div>
     </div>
