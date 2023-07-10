@@ -15,6 +15,12 @@
     --animation-speed: 0.2s;
 }
 
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 11;
+}
+
 nav {
     display: flex;
     align-items: stretch;
