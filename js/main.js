@@ -15,7 +15,7 @@ function timeUpdate() {
   let m = d.getMinutes();
   let h = d.getHours();
   let IsPM = (h >= 12);
-  time.innerHTML = (h%12 == 0)?'12':(h%12) +':'+m+':'+s+' '+(IsPM?'PM':'AM');
+  time.innerHTML = ((h%12 == 0)?'12':(h%12)) +':'+m+':'+s+' '+(IsPM?'PM':'AM');
   
 }
 
