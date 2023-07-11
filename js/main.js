@@ -42,7 +42,7 @@ function clearCookies() {
   let ca = decodeURIComponent(document.cookie).split(';');
   for (let i = 0; i < ca.length; i++) {
     let caKey = ca[i].split('=', 1)[0];
-    document.cookie = caKey + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure";
+    document.cookie = caKey + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; secure";
   }
   console.log("Cookies Cleared.");
 }
