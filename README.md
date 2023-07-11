@@ -8,3 +8,7 @@ The next time you try to book an appointment, it will remember your inputs in th
 placeholder values.
 
 I completely separated html, css, and javascript "elements" for the sake of learning.
+
+#Cookies
+The firstName, lastName, and telephone number entered into the form when you press submit will be saved as a cookie.
+Reset the cookies with the clearCookies() function in the terminal in Dev Tools. 
