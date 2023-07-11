@@ -9,6 +9,6 @@ placeholder values.
 
 I completely separated html, css, and javascript "elements" for the sake of learning.
 
-#Cookies
+# Cookies
 The firstName, lastName, and telephone number entered into the form when you press submit will be saved as a cookie.
 Reset the cookies with the clearCookies() function in the terminal in Dev Tools. 
