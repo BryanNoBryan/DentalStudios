@@ -15,6 +15,7 @@ function timeUpdate() {
   let m = d.getMinutes();
   let h = d.getHours();
   let IsPM = (h >= 12);
+  if (m-10<0) m = "0" + m;
   time.innerHTML = ((h%12 == 0)?'12':(h%12)) +':'+m+':'+s+' '+(IsPM?'PM':'AM');
 }
 
@@ -36,14 +37,14 @@ function dropDown() {
     }
 }
 
-function clearCookie() {
-  let ca = document.cookie.split(';');
-  document.cookie = "";
+//can also use max-age
+function clearCookies() {
+  let ca = decodeURIComponent(document.cookie).split(';');
   for (let i = 0; i < ca.length; i++) {
-    document.cookie = ca[i] + "=;";
+    let caKey = ca[i].split('=', 1)[0];
+    document.cookie = caKey + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure";
   }
-  document.cookie +=  "expires=" + new Date(0).toUTCString() + ";max-age=0;";
-  console.log("Cookie is: " + document.cookie);
+  console.log("Cookies Cleared.");
 }
 
 //fname, fvalue, lname, lvalue, tphone, tvalue, exdays
@@ -59,10 +60,10 @@ function setCookie(event) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
-  document.cookie = fname + '=' + fvalue;
-  document.cookie = lname + '=' + lvalue;
-  document.cookie = tphone + '=' + tvalue;
-  document.cookie = expires + ";path=/; secure";
+  let footer = expires + ";path=/; secure;";
+  document.cookie = fname + '=' + fvalue + ";" + footer;
+  document.cookie = lname + '=' + lvalue + ";" + footer;
+  document.cookie = tphone + '=' + tvalue + ";" + footer;
   console.log(document.cookie);
   // event.preventDefault();
 }
@@ -80,8 +81,7 @@ function checkCookie() {
   
 function getCookie(param) {
   let wanted = param + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
+  let ca = decodeURIComponent(document.cookie).split(';');
   for(let i = 0; i <ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == ' ') {
